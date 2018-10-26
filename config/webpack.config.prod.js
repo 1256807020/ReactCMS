@@ -87,13 +87,30 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
       },
     },
   ];
+  // if (preProcessor) {
+  //   loaders.push({
+  //     loader: require.resolve(preProcessor),
+  //     options: {
+  //       sourceMap: shouldUseSourceMap,
+  //     },
+  //   });
+  // }
   if (preProcessor) {
-    loaders.push({
+    let loader = {
       loader: require.resolve(preProcessor),
       options: {
         sourceMap: shouldUseSourceMap,
       },
-    });
+    }
+    if (preProcessor === "less-loader") {
+      loader.options.modifyVars = {
+        'primary-color': '#FFD700',
+        'link-color': '#1DA57A',
+        'border-radius-base': '2px',
+      }
+      loader.options.javascriptEnabled = true
+    }
+    loaders.push(loader);
   }
   return loaders;
 };
