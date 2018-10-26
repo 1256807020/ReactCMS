@@ -2,20 +2,23 @@ import React from 'react'
 import { Row, Col } from 'antd';
 import Header from './components/Header'
 import Footer from './components/Footer'
+import NavLeft from './components/NavLeft'
+import './style/common.less'
 class Admin extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
+    this.state = {}
   }
   render () {
     return (
-      <Row>
-        <Col span='3'>Left</Col>
-        <Col span='21'>
+      <Row className='container'>
+        <Col span='4' className='nav-left'><NavLeft /></Col>
+        <Col span='20' className='main'>
           <Header></Header>
-          <Row>content</Row>
+          <Row className='content'>
+            content
+          {/* {this.props.children} */}
+          </Row>
           <Footer></Footer>
         </Col>
       </Row>

@@ -5,7 +5,11 @@ class NavLeft extends React.Component {
     this.state = {}
   }
   render () {
+    // var style = {
+    //   backgroundColor: 'red'
+    // }
     return (
+      // <div style={style}>NavLeft</div>
       <div>NavLeft</div>
     )
   }

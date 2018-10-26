@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  .nav-left {
+    width: 15%; // 运算符前后都需要保留一个空格
+    // min-width: calc(100% - 180px);
+    min-width: 180px;
+    height: calc(100vh); // 纵向百分百
+    background-color: red
+  }
+  .main {
+    flex: 1;
+    height: calc(100vh)
+  }
+  .content {
+    position: relative;
+    padding: 20px;
+  }
+}
