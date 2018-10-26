@@ -7,7 +7,7 @@ class Home extends React.Component {
   }
   render () {
     return (
-      <div className='home-warp'>ReactCMS后台管理系统</div>
+      <div className='home-wrap'>ReactCMS后台管理系统</div>
     )
   }
 }
