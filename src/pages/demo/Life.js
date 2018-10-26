@@ -16,9 +16,6 @@ class Life extends React.Component {
     })
   }
   render () {
-    let style = {
-      padding: 50
-    }
     return (
       < div className='content'>
         <Input></Input>
