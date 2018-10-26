@@ -19,7 +19,7 @@ class NavLeft extends React.Component {
   // 菜单渲染
   renderMenu = (data) => {
     return data.map((item) => {
-      console.log(item)
+      // console.log(item)
       if (item.children) {
         return (
           <SubMenu title={item.title} key={item.key}>
