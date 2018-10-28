@@ -25,13 +25,15 @@ export default class IRouter extends React.Component {
             //   <Route component={NoMatch} />
             // </Admin>
             <Admin>
+              <Switch>
               <Route path="/admin/ui/buttons" component={Buttons} />
               <Route component={NoMatch} />
+              </Switch>              
             </Admin>
           } />
 
           <Route path='/order/detail' component={Login} />
-          <Switch></Switch>
+          
         </App>
 
       </HashRouter>
