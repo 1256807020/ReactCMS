@@ -1,6 +1,6 @@
 import React from 'react'
 import { Menu } from 'antd';
-// import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './index.less'
 import MenuConfig from '../../config/menuConfig'
 // 注意MenuConfig的位置
@@ -28,8 +28,8 @@ class NavLeft extends React.Component {
         )
       }
       return <Menu.Item title={item.title} key={item.key}>
-        {item.title}
-        {/* <NavLink to={item.key}>{item.title}</NavLink> */}
+        {/* {item.title} */}
+        <NavLink to={item.key}>{item.title}</NavLink>
       </Menu.Item>
     })
   }
