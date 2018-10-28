@@ -22,7 +22,8 @@ export default class Axios {
             loading = document.getElementById('ajaxLoading');
             loading.style.display = 'block';
         }
-        let baseApi = 'https://www.easy-mock.com/mock/5a7278e28d0c633b9c4adbd7/api';
+        console.log(options)
+        let baseApi = 'https://www.easy-mock.com/mock/5bd5a62382302f7129a27ffe/mockapi';
         return new Promise((resolve, reject) => {
             axios({
                 url: options.url,
@@ -32,12 +33,15 @@ export default class Axios {
                 params: (options.data && options.data.params) || ''
             }).then((response) => {
                 if (options.data && options.data.isShowLoading !== false) {
-                    loading = document.getElementById('ajaxLoading');
-                    loading.style.display = 'none';
+                loading = document.getElementById('ajaxLoading');
+                loading.style.display = 'none';
                 }
-                if (response.status === '200') {
+                console.log(response)
+                if (response.status === 200) {
                     let res = response.data;
-                    if (res.code === '0') {
+                    console.log(res)
+                    if (res.code === 0) {
+                        console.log(res)
                         resolve(res);
                     } else {
                         Modal.info({
