@@ -61,6 +61,8 @@ export default class BasicTable extends React.Component {
             url: '/table/list',
             data: {
                 params: {
+                    // 此处不用this.state.page是因为state会重新渲染dom,而this.params.page则是获取动态参数，mock下看接口传参是否正确就行
+                    // 看效果，发现页码数除了选中的页码，还有默认1，这不用担心，mock数据中修改为5，则刷新后，会显示第五页数据，mock的一些小缺点
                     page: this.params.page
                 },
                 // 通过更改布尔值，来控制是否加载加载loading
@@ -70,13 +72,14 @@ export default class BasicTable extends React.Component {
             // console.log(res)
             if (res.code === 0) {
                 console.log(res)
-                res.result.map((item, index) => {
+                res.result.list.map((item, index) => {
                     // console.log(item, index)
                     // 每个表格中需要key来标识唯一数据，防止渲染出错
                     return item.key = index;
                 })
+                // 凡是涉及到this。setState的，都会重新渲染dom
                 this.setState({
-                    dataSource2: res.result,
+                    dataSource2: res.result.list,
                     selectedRowKeys: [],
                     selectedRows: null,
                     pagination: Utils.pagination(res, (current) => {
@@ -186,6 +189,7 @@ export default class BasicTable extends React.Component {
                 dataIndex: 'time'
             }
         ]
+        // selectedRowKeys不设置该属性，当选中的时候，不会默认勾选改项
         const selectedRowKeys = this.state.selectedRowKeys;
         const rowSelection = {
             type: 'radio',
@@ -220,6 +224,7 @@ export default class BasicTable extends React.Component {
                     />
                 </Card>
                 <Card title="Mock-单选" style={{ margin: '10px 0' }}>
+                    {/* rowSelection 表格中选中一行 */}
                     <Table
                         bordered
                         rowSelection={rowSelection}
