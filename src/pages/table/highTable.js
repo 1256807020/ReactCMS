@@ -1,22 +1,22 @@
 import React from 'react';
 import { Card, Table, Modal, Button, message, Badge } from 'antd';
 import axios from './../../axios/index'
-import Utils from './../../utils/utils';
-export default class BasicTable extends React.Component {
+// import Utils from './../../utils/utils';
+export default class HighTable extends React.Component {
 
     state = {
 
     }
     params = {
-        page:1
+        page: 1
     }
-    componentDidMount(){
+    componentDidMount () {
         this.request();
     }
 
     // 动态获取mock数据
     request = () => {
-        let _this = this;
+        // let _this = this;
         axios.ajax({
             url: '/table/high/list',
             data: {
@@ -25,9 +25,9 @@ export default class BasicTable extends React.Component {
                 }
             }
         }).then((res) => {
-            if (res.code == 0) {
+            if (res.code === 0) {
                 res.result.list.map((item, index) => {
-                    item.key = index;
+                    return item.key = index;
                 })
                 this.setState({
                     dataSource: res.result.list
@@ -36,32 +36,32 @@ export default class BasicTable extends React.Component {
         })
     }
 
-    handleChange = (pagination, filters, sorter)=>{
+    handleChange = (pagination, filters, sorter) => {
         console.log("::" + sorter)
         this.setState({
-            sortOrder:sorter.order
+            sortOrder: sorter.order
         })
     }
 
     // 删除操作
-    handleDelete = (item)=>{
-        let id = item.id;
+    handleDelete = (item) => {
+        // let id = item.id;
         Modal.confirm({
-            title:'确认',
-            content:'您确认要删除此条数据吗？',
-            onOk:()=>{
+            title: '确认',
+            content: '您确认要删除此条数据吗？',
+            onOk: () => {
                 message.success('删除成功');
                 this.request();
             }
         })
     }
 
-    render(){
+    render () {
         const columns = [
             {
                 title: 'id',
                 key: 'id',
-                width:80,
+                width: 80,
                 dataIndex: 'id'
             },
             {
@@ -75,8 +75,8 @@ export default class BasicTable extends React.Component {
                 key: 'sex',
                 width: 80,
                 dataIndex: 'sex',
-                render(sex) {
-                    return sex == 1 ? '男' : '女'
+                render (sex) {
+                    return sex === 1 ? '男' : '女'
                 }
             },
             {
@@ -84,7 +84,7 @@ export default class BasicTable extends React.Component {
                 key: 'state',
                 width: 80,
                 dataIndex: 'state',
-                render(state) {
+                render (state) {
                     let config = {
                         '1': '咸鱼一条',
                         '2': '风华浪子',
@@ -100,7 +100,7 @@ export default class BasicTable extends React.Component {
                 key: 'interest',
                 width: 80,
                 dataIndex: 'interest',
-                render(abc) {
+                render (abc) {
                     let config = {
                         '1': '游泳',
                         '2': '打篮球',
@@ -138,7 +138,7 @@ export default class BasicTable extends React.Component {
                 title: 'id',
                 key: 'id',
                 width: 80,
-                fixed:'left',
+                fixed: 'left',
                 dataIndex: 'id'
             },
             {
@@ -153,8 +153,8 @@ export default class BasicTable extends React.Component {
                 key: 'sex',
                 width: 80,
                 dataIndex: 'sex',
-                render(sex) {
-                    return sex == 1 ? '男' : '女'
+                render (sex) {
+                    return sex === 1 ? '男' : '女'
                 }
             },
             {
@@ -162,7 +162,7 @@ export default class BasicTable extends React.Component {
                 key: 'state',
                 width: 80,
                 dataIndex: 'state',
-                render(state) {
+                render (state) {
                     let config = {
                         '1': '咸鱼一条',
                         '2': '风华浪子',
@@ -178,7 +178,7 @@ export default class BasicTable extends React.Component {
                 key: 'interest',
                 width: 80,
                 dataIndex: 'interest',
-                render(abc) {
+                render (abc) {
                     let config = {
                         '1': '游泳',
                         '2': '打篮球',
@@ -194,88 +194,88 @@ export default class BasicTable extends React.Component {
             },
             {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             },
             {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             }, {
                 title: '生日',
-                key: 'birthday',
+                key: 'birthday'+Math.random(),
                 width: 120,
                 dataIndex: 'birthday'
             },
@@ -309,24 +309,24 @@ export default class BasicTable extends React.Component {
                 title: '性别',
                 key: 'sex',
                 dataIndex: 'sex',
-                render(sex) {
-                    return sex == 1 ? '男' : '女'
+                render (sex) {
+                    return sex === 1 ? '男' : '女'
                 }
             },
             {
                 title: '年龄',
                 key: 'age',
                 dataIndex: 'age',
-                sorter:(a,b)=>{
+                sorter: (a, b) => {
                     return a.age - b.age;
                 },
-                sortOrder:this.state.sortOrder
+                sortOrder: this.state.sortOrder
             },
             {
                 title: '状态',
                 key: 'state',
                 dataIndex: 'state',
-                render(state) {
+                render (state) {
                     let config = {
                         '1': '咸鱼一条',
                         '2': '风华浪子',
@@ -341,7 +341,7 @@ export default class BasicTable extends React.Component {
                 title: '爱好',
                 key: 'interest',
                 dataIndex: 'interest',
-                render(abc) {
+                render (abc) {
                     let config = {
                         '1': '游泳',
                         '2': '打篮球',
@@ -383,8 +383,8 @@ export default class BasicTable extends React.Component {
             {
                 title: '性别',
                 dataIndex: 'sex',
-                render(sex) {
-                    return sex == 1 ? '男' : '女'
+                render (sex) {
+                    return sex === 1 ? '男' : '女'
                 }
             },
             {
@@ -394,7 +394,7 @@ export default class BasicTable extends React.Component {
             {
                 title: '状态',
                 dataIndex: 'state',
-                render(state) {
+                render (state) {
                     let config = {
                         '1': '咸鱼一条',
                         '2': '风华浪子',
@@ -408,9 +408,9 @@ export default class BasicTable extends React.Component {
             {
                 title: '爱好',
                 dataIndex: 'interest',
-                render(abc) {
+                render (abc) {
                     let config = {
-                        '1': <Badge status="success" text="成功"/>,
+                        '1': <Badge status="success" text="成功" />,
                         '2': <Badge status="error" text="报错" />,
                         '3': <Badge status="default" text="正常" />,
                         '4': <Badge status="processing" text="进行中" />,
@@ -429,7 +429,7 @@ export default class BasicTable extends React.Component {
             },
             {
                 title: '操作',
-                render:(text,item)=>{
+                render: (text, item) => {
                     return <Button size="small" onClick={(item) => { this.handleDelete(item) }}>删除</Button>
                 }
             }
@@ -442,7 +442,7 @@ export default class BasicTable extends React.Component {
                         columns={columns}
                         dataSource={this.state.dataSource}
                         pagination={false}
-                        scroll={{y:240}}
+                        scroll={{ y: 240 }}
                     />
                 </Card>
                 <Card title="左侧固定" style={{ margin: '10px 0' }}>
