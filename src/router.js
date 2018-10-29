@@ -21,6 +21,13 @@ import Order from './pages/order/index'
 import Common from './common'
 import OrderDetail from './pages/order/detail'
 import Permission from './pages/permission'
+import User from './pages/user'
+import BikeMap from './pages/map/bikeMap'
+import Bar from './pages/echarts/bar/index'
+import Pie from './pages/echarts/pie/index'
+import Line from './pages/echarts/line/index'
+import Rich from './pages/rich'
+
 export default class IRouter extends React.Component {
   constructor(props) {
     super(props)
@@ -57,6 +64,12 @@ export default class IRouter extends React.Component {
                 <Route path="/admin/city" component={City} />
                 <Route path="/admin/order" component={Order} />
                 <Route path="/admin/permission" component={Permission} />
+                <Route path="/admin/user" component={User} />
+                <Route path="/admin/bikemap" component={BikeMap} />
+                <Route path="/admin/charts/bar" component={Bar} />
+                <Route path="/admin/charts/pie" component={Pie} />
+                <Route path="/admin/charts/line" component={Line} />
+                <Route path='/admin/rich' component={Rich} />
                 <Route component={NoMatch} />
               </Switch>
             </Admin>

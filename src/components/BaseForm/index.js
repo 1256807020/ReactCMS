@@ -24,6 +24,9 @@ class FilterForm extends React.Component {
                 console.log(item)
                 let label = item.label;
                 let field = item.field;
+                console.log(item)
+                console.log(field)
+                console.log(typeof(field))
                 let initialValue = item.initialValue || '';
                 let placeholder = item.placeholder;
                 let width = item.width;
