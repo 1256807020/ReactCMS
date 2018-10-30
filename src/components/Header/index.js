@@ -44,7 +44,7 @@ class Header extends React.Component {
 
           <Col span="6" className="logo">
             <img src="/assets/logo-ant.svg" alt="" />
-            <span>IMooc 通用管理系统</span>
+            <span>ReactCMS 通用管理系统</span>
           </Col>
 
           <Col span='18'>

@@ -36,6 +36,7 @@ export default class RichText extends React.Component{
     };
 
     render(){
+        // eslint-disable-next-line
         const { editorContent, editorState } = this.state;
         return (
             <div>

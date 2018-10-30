@@ -83,6 +83,7 @@ export default class Order extends React.Component{
         let data = this.roleForm.props.form.getFieldsValue();
         data.role_id = this.state.selectedItem.id;
         data.menus = this.state.menuInfo;
+        // es6解构赋值
         axios.ajax({
             url:'/permission/edit',
             data:{

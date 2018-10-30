@@ -72,7 +72,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
         loader,
         options: {
           modifyVars: {
-            'primary-color': '#FFD700',
+            'primary-color': '#1890FF',
             'link-color': '#1DA57A',
             'border-radius-base': '2px',
           },

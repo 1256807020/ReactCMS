@@ -104,7 +104,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     }
     if (preProcessor === "less-loader") {
       loader.options.modifyVars = {
-        'primary-color': '#FFD700',
+        'primary-color': '#1890FF',
         'link-color': '#1DA57A',
         'border-radius-base': '2px',
       }

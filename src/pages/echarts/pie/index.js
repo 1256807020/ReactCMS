@@ -1,6 +1,7 @@
 import React from 'react'
 import {Card} from 'antd'
 import ReactEcharts from 'echarts-for-react';
+// eslint-disable-next-line
 import echartTheme from '../echartTheme'
 import themeLight from '../themeLight'
 // import echarts from 'echarts'
